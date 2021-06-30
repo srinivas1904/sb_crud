@@ -1,0 +1,48 @@
+http://localhost:8081/swagger-ui.html
+
+===== Table Structure  ====================
+select * from mydata.student; 
+create table mydata.student( student_id int NOT NULL AUTO_INCREMENT, 
+student_name varchar(255), student_address varchar(255),primary key(student_id));
+
+insert into mydata.student values(1,  'AB', 'Hno 1-53 Clg rd TG');
+insert into mydata.student values(2, 'BC', 'Hno 1-54 Clg rd TG');
+insert into mydata.student values(3, 'CD', 'Hno 1-55 Clg rd TG');
+
+ALTER TABLE mydata.student ALTER student_id SET DEFAULT NULL;
+alter table mydata.student modify column student_id integer NOT NULL AUTO_INCREMENT;
+
+create table student( student_id integer not null, student_name varchar(255), student_address varchar(255))
+
+
+###insert into student values(1,  'AB', 'Hno 1-53 Clg rd TG');
+###insert into student values(2, 'AB', 'Hno 1-53 Clg rd TG');
+###insert into student values(13 'AB', 'Hno 1-53 Clg rd TG');
+
+---Swagger------------------------------
+http://localhost:8080/v2/api-docs
+	//Swagger 2
+	//All the paths
+	//all the api's
+	
+http://localhost:8081/swagger-ui.html
+
+----actuator ------------------
+http://localhost:8081/actuator
+
+{
+"_links": {
+"self": {
+"href": "http://localhost:8081/actuator",
+"templated": false
+},
+"health": {
+"href": "http://localhost:8081/actuator/health",
+"templated": false
+},
+"health-path": {
+"href": "http://localhost:8081/actuator/health/{*path}",
+"templated": true
+}
+}
+}
